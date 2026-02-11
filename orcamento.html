@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitar Orçamento - Vitor Smart Tech </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fas fa-mobile-alt"></i>
+                <h1>Vitor Smart Tech</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="index.html#servicos">Serviços</a></li>
+                <li><a href="index.html#sobre">Sobre</a></li>
+                <li><a href="index.html#contato">Contato</a></li>
+                <li><a href="orcamento.html" class="btn-orcamento">Solicitar Orçamento</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Página de Orçamento -->
+<section class="budget-page">
+    <div class="budget-container">
+        <h2>Solicitar Orçamento</h2>
+        <p class="budget-subtitle">Preencha o formulário abaixo para receber um orçamento gratuito</p>
+        
+        <form id="budgetForm">
+            <!-- Seus campos do formulário permanecem iguais -->
+            <div class="form-group">
+                <label for="name">Nome completo *</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">E-mail *</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Telefone *</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="deviceType">Tipo de dispositivo *</label>
+                <select id="deviceType" name="deviceType" required>
+                    <option value="">Selecione</option>
+                    <option value="iphone">iPhone</option>
+                    <option value="samsung">Samsung</option>
+                    <option value="xiaomi">Xiaomi</option>
+                    <option value="motorola">Motorola</option>
+                    <option value="lg">LG</option>
+                    <option value="outro">Outro</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="deviceModel">Modelo do aparelho</label>
+                <input type="text" id="deviceModel" name="deviceModel" placeholder="Ex: iPhone 12, Galaxy S20, etc.">
+            </div>
+            
+            <div class="form-group">
+                <label>Problemas apresentados *</label>
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox" name="problems" value="tela_quebrada">
+                        <span>Tela quebrada/trincada</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="problems" value="bateria">
+                        <span>Bateria com pouca duração</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="problems" value="nao_liga">
+                        <span>Não liga</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="problems" value="conector_carga">
+                        <span>Problema no conector de carga</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="problems" value="audio">
+                        <span>Problemas de áudio</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="problems" value="agua">
+                        <span>Contato com água/líquido</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="problems" value="outro">
+                        <span>Outro problema</span>
+                    </label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="problemDescription">Descrição detalhada do problema *</label>
+                <textarea id="problemDescription" name="problemDescription" rows="4" required placeholder="Descreva com detalhes o que aconteceu com seu aparelho..."></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="urgency">Urgência do reparo</label>
+                <select id="urgency" name="urgency">
+                    <option value="normal">Normal (3-5 dias úteis)</option>
+                    <option value="urgente">Urgente (1-2 dias úteis)</option>
+                    <option value="muito_urgente">Muito urgente (mesmo dia)</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="budgetPreference">Preferência de orçamento</label>
+                <select id="budgetPreference" name="budgetPreference">
+                    <option value="orcamento_online">Orçamento online</option>
+                    <option value="presencial">Avaliação presencial na loja</option>
+                    <option value="retirada">Retirada em domicílio</option>
+                </select>
+            </div>
+            
+            <div class="form-group terms-group">
+                <label>
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <span>Concordo com os <a href="#">termos e condições</a> *</span>
+                </label>
+            </div>
+            
+            <!-- Botão modificado com função WhatsApp -->
+            <button type="button" class="btn-submit" id="submitBudget">
+                📱 Enviar Solicitação via WhatsApp
+            </button>
+            
+            <p class="whatsapp-note">✔ Seu orçamento será enviado diretamente para nosso WhatsApp</p>
+        </form>
+    </div>
+</section>
+
+<!-- CSS para melhorar aparência -->
+<style>
+.budget-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    background: #59595a;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.budget-subtitle {
+    color: #000000;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #000000;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dddddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #0906bb;
+    outline: none;
+}
+
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.checkbox-group label:hover {
+    background: #454546;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+.terms-group {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 30px;
+}
+
+.terms-group label {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+}
+
+.terms-group input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #0906bb, #1A1A1A);
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.btn-submit:hover {
+    background: linear-gradient(135deg, #1A1A1A, #0906bb);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px #0906bb;
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+}
+
+.btn-submit:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.whatsapp-note {
+    text-align: center;
+    margin-top: 15px;
+    color: #0a0a0a;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Modal de confirmação */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: #59595a;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.modal h3 {
+    color: #0a0a0a;
+    margin-bottom: 15px;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.modal-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.modal-btn.confirm {
+    background: #0c08e7;
+    color: white;
+}
+
+.modal-btn.cancel {
+    background: #f5f5f5;
+    color: #59595a;
+}
+</style>
+
+<!-- Script de integração WhatsApp -->
+<script>
+// CONFIGURAÇÃO - ALTERE ESTE NÚMERO PARA O SEU WHATSAPP
+const WHATSAPP_NUMBER = "5543988016282"; // Substitua pelo seu número
+
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('budgetForm');
+    const submitBtn = document.getElementById('submitBudget');
+    const whatsappNote = document.querySelector('.whatsapp-note');
+    
+    // Tradução dos valores para português
+    const translations = {
+        deviceType: {
+            'iphone': 'iPhone',
+            'samsung': 'Samsung',
+            'xiaomi': 'Xiaomi',
+            'motorola': 'Motorola',
+            'lg': 'LG',
+            'outro': 'Outro'
+        },
+        problems: {
+            'tela_quebrada': 'Tela quebrada/trincada',
+            'bateria': 'Bateria com pouca duração',
+            'nao_liga': 'Não liga',
+            'conector_carga': 'Problema no conector de carga',
+            'audio': 'Problemas de áudio',
+            'agua': 'Contato com água/líquido',
+            'outro': 'Outro problema'
+        },
+        urgency: {
+            'normal': 'Normal (3-5 dias úteis)',
+            'urgente': 'Urgente (1-2 dias úteis)',
+            'muito_urgente': 'Muito urgente (mesmo dia)'
+        },
+        budgetPreference: {
+            'orcamento_online': 'Orçamento online',
+            'presencial': 'Avaliação presencial na loja',
+            'retirada': 'Retirada em domicílio'
+        }
+    };
+    
+    // Função para formatar telefone
+    function formatPhoneNumber(phone) {
+        // Remove tudo que não é número
+        return phone.replace(/\D/g, '');
+    }
+    
+    // Função para obter problemas selecionados
+    function getSelectedProblems() {
+        const checkboxes = document.querySelectorAll('input[name="problems"]:checked');
+        const problems = Array.from(checkboxes).map(cb => {
+            return translations.problems[cb.value] || cb.value;
+        });
+        return problems.length > 0 ? problems : ['Não especificado'];
+    }
+    
+    // Função para validar formulário
+    function validateForm() {
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const deviceType = document.getElementById('deviceType').value;
+        const problemDescription = document.getElementById('problemDescription').value.trim();
+        const terms = document.getElementById('terms').checked;
+        
+        const errors = [];
+        
+        if (!name) errors.push('Nome completo');
+        if (!email) errors.push('E-mail');
+        if (!phone) errors.push('Telefone');
+        if (!deviceType) errors.push('Tipo de dispositivo');
+        if (!problemDescription) errors.push('Descrição do problema');
+        if (!terms) errors.push('Aceitar termos e condições');
+        
+        return errors;
+    }
+    
+    // Função para formatar a mensagem do WhatsApp
+    function formatWhatsAppMessage(formData) {
+        const problemsList = formData.problems.map(p => `• ${p}`).join('\n');
+        
+        return `📱 *NOVA SOLICITAÇÃO DE ORÇAMENTO*
+
+👤 *Cliente:* ${formData.name}
+📧 *E-mail:* ${formData.email}
+📞 *Telefone:* ${formData.phone}
+
+📱 *Dispositivo:*
+• Tipo: ${formData.deviceType}
+• Modelo: ${formData.deviceModel || 'Não informado'}
+
+🔧 *Problemas Relatados:*
+${problemsList}
+
+📝 *Descrição Detalhada:*
+${formData.problemDescription}
+
+⏰ *Urgência:* ${formData.urgency}
+📍 *Preferência:* ${formData.budgetPreference}
+
+📅 *Solicitado em:* ${formData.date}
+🕒 *Horário:* ${formData.time}
+
+---
+⚠️ *Esta solicitação foi enviada através do site.*
+📲 *Para responder, clique em responder neste chat.*`;
+    }
+    
+    // Função para enviar para WhatsApp
+    function sendToWhatsApp(formData) {
+        // Formatar número
+        const phoneNumber = formatPhoneNumber(formData.phone);
+        
+        // Criar mensagem
+        const message = formatWhatsAppMessage(formData);
+        
+        // Codificar para URL
+        const encodedMessage = encodeURIComponent(message);
+        
+        // Criar URL do WhatsApp
+        const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+        
+        // Abrir WhatsApp em nova aba
+        window.open(whatsappUrl, '_blank');
+        
+        // Feedback visual
+        submitBtn.innerHTML = '✓ Orçamento Enviado!';
+        submitBtn.style.background = 'linear-gradient(135deg, #128C7E, #075E54)';
+        submitBtn.disabled = true;
+        
+        // Resetar formulário após 3 segundos
+        setTimeout(() => {
+            form.reset();
+            submitBtn.innerHTML = '📱 Enviar Nova Solicitação via WhatsApp';
+            submitBtn.style.background = 'linear-gradient(135deg, #25d366, #128C7E)';
+            submitBtn.disabled = false;
+            
+            // Scroll para o topo do formulário
+            form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 3000);
+    }
+    
+    // Evento de clique no botão
+    submitBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Validar formulário
+        const errors = validateForm();
+        
+        if (errors.length > 0) {
+            alert('Por favor, preencha os seguintes campos obrigatórios:\n\n' + 
+                  errors.map((err, i) => `${i + 1}. ${err}`).join('\n'));
+            return;
+        }
+        
+        // Coletar dados do formulário
+        const formData = {
+            name: document.getElementById('name').value.trim(),
+            email: document.getElementById('email').value.trim(),
+            phone: document.getElementById('phone').value.trim(),
+            deviceType: translations.deviceType[document.getElementById('deviceType').value] || 
+                       document.getElementById('deviceType').value,
+            deviceModel: document.getElementById('deviceModel').value.trim(),
+            problems: getSelectedProblems(),
+            problemDescription: document.getElementById('problemDescription').value.trim(),
+            urgency: translations.urgency[document.getElementById('urgency').value] || 
+                    document.getElementById('urgency').value,
+            budgetPreference: translations.budgetPreference[document.getElementById('budgetPreference').value] || 
+                           document.getElementById('budgetPreference').value,
+            date: new Date().toLocaleDateString('pt-BR'),
+            time: new Date().toLocaleTimeString('pt-BR', { 
+                hour: '2-digit', 
+                minute: '2-digit' 
+            })
+        };
+        
+        // Mostrar modal de confirmação
+        showConfirmationModal(formData);
+    });
+    
+    // Modal de confirmação
+    function showConfirmationModal(formData) {
+        // Criar modal
+        let modal = document.getElementById('whatsappConfirmationModal');
+        
+        if (!modal) {
+            modal = document.createElement('div');
+            modal.id = 'whatsappConfirmationModal';
+            modal.className = 'modal';
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <h3>📱 Confirmar Envio</h3>
+                    <p>Sua solicitação de orçamento será enviada para nosso WhatsApp.</p>
+                    <p><strong>Tem certeza que deseja continuar?</strong></p>
+                    <div class="modal-buttons">
+                        <button class="modal-btn confirm">Sim, enviar agora</button>
+                        <button class="modal-btn cancel">Cancelar</button>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+            
+            // Eventos do modal
+            modal.querySelector('.confirm').addEventListener('click', function() {
+                modal.style.display = 'none';
+                // Mostrar carregamento
+                submitBtn.innerHTML = '🔄 Preparando mensagem...';
+                submitBtn.disabled = true;
+                
+                // Enviar após pequeno delay
+                setTimeout(() => {
+                    sendToWhatsApp(formData);
+                }, 500);
+            });
+            
+            modal.querySelector('.cancel').addEventListener('click', function() {
+                modal.style.display = 'none';
+            });
+            
+            // Fechar modal ao clicar fora
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        }
+        
+        modal.style.display = 'flex';
+    }
+    
+    // Adicionar máscara ao telefone (opcional)
+    const phoneInput = document.getElementById('phone');
+    if (phoneInput) {
+        phoneInput.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            
+            if (value.length > 11) value = value.substring(0, 11);
+            
+            if (value.length > 10) {
+                value = value.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3');
+            } else if (value.length > 6) {
+                value = value.replace(/^(\d{2})(\d{4})(\d{0,4})$/, '($1) $2-$3');
+            } else if (value.length > 2) {
+                value = value.replace(/^(\d{2})(\d{0,5})$/, '($1) $2');
+            } else if (value.length > 0) {
+                value = value.replace(/^(\d{0,2})$/, '($1');
+            }
+            
+            e.target.value = value;
+        });
+    }
+    
+    // Adicionar mensagem dinâmica com o número do WhatsApp
+    whatsappNote.textContent = `✔ Seu orçamento será enviado para WhatsApp: ${formatPhoneNumberForDisplay(WHATSAPP_NUMBER)}`;
+    
+    function formatPhoneNumberForDisplay(number) {
+        const clean = number.replace(/\D/g, '');
+        return `(${clean.substring(2, 4)}) ${clean.substring(4, 9)}-${clean.substring(9)}`;
+    }
+});
+</script>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-mobile-alt"></i>
+                <h2>Vitor Smart Tech</h2>
+                <p>Seu celular em boas mãos</p>
+            </div>
+            <div class="footer-links">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="index.html#servicos">Serviços</a></li>
+                    <li><a href="index.html#sobre">Sobre</a></li>
+                    <li><a href="index.html#contato">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>Siga-nos</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Vitor Smart Tech. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="orcamento.js"></script>
+</body>
+</html>
