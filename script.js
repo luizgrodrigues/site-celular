@@ -10,7 +10,7 @@ if (hamburger) {
         navLinks.style.top = '100%';
         navLinks.style.left = '0';
         navLinks.style.width = '100%';
-        navLinks.style.backgroundColor = '#59595a';
+        navLinks.style.backgroundColor = '#1A1A1A';
         navLinks.style.padding = '1rem';
         navLinks.style.boxShadow = '0 5px 10px rgba(0,0,0,0.1)';
     });

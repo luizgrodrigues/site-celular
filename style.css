@@ -24,7 +24,7 @@ body {
 
 /* Header e Navbar */
 header {
-    background-color: #59595a(77, 76, 76);
+    background-color: #1A1A1A(77, 76, 76);
     box-shadow: var(--shadow);
     position: fixed;
     width: 100%;
