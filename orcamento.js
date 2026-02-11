@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         .budget-container h2 {
             text-align: center;
-            color: var(--primary-color);
+            color: white;
             margin-bottom: 0.5rem;
         }
         
