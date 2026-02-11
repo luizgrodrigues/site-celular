@@ -8,7 +8,7 @@
 :root {
     --primary-color: #0906bb;
     --secondary-color: #0906bb;
-    --dark-color: #020202;
+    --dark-color: #f7f7f7;
     --light-color: #1A1A1A;
     --gray-color: #1A1A1A;
     --shadow: 0 5px 15px rgba(0, 19, 192, 0.1);
@@ -17,7 +17,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: black;
-    background-color: #141414;
+    background-color: #1A1A1A;
     color: #ffffff;
     min-height: 100vh;
 }
@@ -39,6 +39,7 @@ header {
     padding: 1rem 5%;
     max-width: 1400px;
     margin: 0 auto;
+    background-color: #1A1A1A;
 }
 
 .logo {
@@ -277,7 +278,7 @@ header {
 
 /* Footer */
 footer {
-    background-color: var(--dark-color);
+    background-color: rgb(0, 0, 0);
     color: #fdfdfd;
     padding: 3rem 5% 1rem;
 }
